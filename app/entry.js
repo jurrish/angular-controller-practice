@@ -22,4 +22,19 @@ function CowsayController($log, $scope){
     $log.debug('cowsayCtrl.helloClick');
     $log.log('spammmm clicky');
   };
+
+//controller as syntax
+  demoApp.controller('NavController', ['$log', NavController]);
+  function NavController($log){
+    this.routes = [
+      {
+        name: 'Home',
+        url: '/home'
+      },
+      {
+        name: 'About',
+        url: '/about',
+      },
+    ];
+  }
 }

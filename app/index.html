@@ -5,6 +5,16 @@
     <title></title>
   </head>
   <body>
+    <nav ng-controller="NavController as navCtrl">
+      <!-- now everything is under the navCtrl scope -->
+      <ul>
+        <!-- ng-repeat is a for loop -->
+        <li ng-repeat="navItem in navCtrl.routes">
+          <!-- ng-href is what we need to use to name our items inside of ng-repeat (and they have their own properties defined in the controller.js) -->
+          <a ng-href="{{navItem.url}}">{{navItem.name}}</a>
+        </li>
+      </ul>
+    </nav>
     <section ng-controller="CowsayController">
       <h1> {{cowsayCtrl.title}} </h1>
         <input type="text" ng-model="cowsayCtrl.text">
