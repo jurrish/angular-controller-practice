@@ -15,20 +15,24 @@
         </li>
       </ul>
     </nav>
-    <section ng-controller="CowsayController">
+    <section ng-controller="CowsayController as cowsayCtrl">
       <h1> {{cowsayCtrl.title}} </h1>
         <input type="text" ng-model="cowsayCtrl.text">
-        <button ng-click="cowsayCtrl.helloClick(cowsayCtrl.text)">click me for spam </button>
+        <!-- you can have a button with type submit, OR input with type submit -->
+        <!-- novalidate is a directive that tells angular forms to have functionality -->
+
+        <form ng-submit="cowsayCtrl.speak(cowsayCtrl.text)" novalidate>
+          <!-- submits for the form -->
+          <button type="submit">speak</button>
+        </form>
         <pre>
           {{cowsayCtrl.updateCow(cowsayCtrl.text)}}
         </pre>
+<!-- put falsy or truthy value inside of ng-show -->
+<!-- this pre tag WILL NOT SHOW if .spoken doesn't exist -->
+        <pre ng-show="cowsayCtrl.spoken">
+          {{cowsayCtrl.spoken}}
+        </pre>
       </section>
-
-      <section ng-controller="CowsayController">
-        <h1>{{cowsayCtrl.title}}</h1>
-        <input type="text" ng-model="cowsayCtrl.coolbeans">
-        <p>{{cowsayCtrl.coolbeans}}</p>
-      </section>
-
   </body>
 </html>
