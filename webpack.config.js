@@ -7,7 +7,7 @@ module.exports = {
   entry: `${__dirname}/app/entry.js`,
   plugins: [
     new HTMLPlugin({
-      template: `${__dirname}/app/index.js`
+      template: `${__dirname}/app/index.html`
     }),
     new ExtractTextPlugin('bundle.css'),
   ],
